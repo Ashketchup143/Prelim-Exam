@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #000000;
+      background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(140, 187, 183, 0)), url('https://images.pexels.com/photos/1925536/pexels-photo-1925536.jpeg?cs=srgb&dl=pexels-lil-artsy-1925536.jpg&fm=jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for header */
+      color: #000000;
+      padding: 10px 20px;
+      z-index: 100;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      color: #ccc;
+    }
+    main {
+      text-align: center;
+      padding: 50px 20px;
+      color: #000000;
+    }
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .login-container {
+        width: 300px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 0 auto; /* Center horizontally */
+        position: absolute; /* Position absolutely */
+        top: 50%; /* Move to vertical center */
+        left: 50%; /* Move to horizontal center */
+        transform: translate(-50%, -50%); /* Adjust for centering */
+    }
+
+    .login-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
+    .login-container input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .login-container input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .description {
+        text-align: center;
+        margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/uniquepage">Unique Page</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+  <main>
+    <div class="content">
+      <h1>Welcome to My Website</h1>
+      <p>Thank you for visiting! This website is dedicated to providing you with valuable information about our services, projects, and more. Feel free to explore and don't hesitate to reach out if you have any questions or inquiries.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec justo vel libero fermentum pharetra. Sed ut sapien vel ante volutpat ultrices. Fusce vitae velit non odio fringilla eleifend. Nunc ut enim quis risus feugiat tincidunt. Vivamus consectetur erat non justo vestibulum, sed interdum turpis finibus. Aliquam id est quis elit vehicula scelerisque ut ac tellus. Nulla vestibulum, est eu rhoncus gravida, est purus auctor urna, nec sollicitudin ipsum magna ut risus. Integer ac nisi in turpis congue ultricies. Duis vitae arcu nec nunc viverra vestibulum.</p>
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(0, 0, 0);
+            height: 100vh; /* This will center the content vertically */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            overflow: hidden; /* Hide overflow to prevent scrollbars */
+            position: relative; /* Position divs absolutely relative to the body */
+        }
+
+        .rainbow-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place behind other content */
+            animation: rainbow 10s infinite; /* Apply animation */
+        }
+
+        @keyframes rainbow {
+            0% { background-color: red; }
+            16.67% { background-color: orange; }
+            33.33% { background-color: yellow; }
+            50% { background-color: green; }
+            66.67% { background-color: blue; }
+            83.33% { background-color: indigo; }
+            100% { background-color: violet; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Rainbow background -->
+    <div class="rainbow-background"></div>
+
+    <div>
+        <h1>Eng eng there is no signal because it's an error, dzuhhh</h1>
+        <img src="https://miro.medium.com/v2/resize:fit:1358/1*GI-td9gs8D5OKZd19mAOqA.png" alt="Project 1" width="500">
+    </div>
+</body>
+</html>

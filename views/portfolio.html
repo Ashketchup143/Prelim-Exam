@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: #ccc;
+    }
+
+    .portfolio-content {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .portfolio-item {
+      display: inline-block;
+      margin: 20px;
+    }
+
+    .portfolio-item img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    p{
+      margin: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/uniquepage">Unique Page</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="portfolio-content">
+    <h1>Portfolio</h1>
+    <div style="flex: content; flex-direction: row;"><img width=200 height=200 src="https://upload.wikimedia.org/wikipedia/en/6/64/Ateneo_de_Davao_University_logo.png" alt="Portfolio Item 1">
+    <p>Education:
+    Bachelor of Science in Information Systems
+    Ateneo de Davao University</p>
+    <p>Expected Graduation: May 2025</p></div>
+
+    <p style="margin-top: 20px;">Skills:</p>
+
+      <p>Programming Languages: Proficient in Java, Python, SQL</p>
+      <p>Database Management: Experienced in MySQL, Oracle</p>
+      <p>Web Development: Knowledgeable in HTML, CSS, JavaScript</p>
+      <p>Data Analysis: Skilled in data visualization and interpretation using tools like Tableau</p>
+      <p>Project Management: Effective at coordinating and executing IT projects from inception to completion</p>
+    <div class="portfolio-item">
+      <img width=400 height=400 src="https://play-lh.googleusercontent.com/zPxLgj5nvl20ahJV7aFC6S5mD8kii5CEEDj25j1P9CYAfXL9sdDuO-8eES0r4DhJHrU" alt="Portfolio Item 1">
+      <p>Tic tac toe website</p>
+    </div>
+    <div class="portfolio-item">
+      <img width=400 height=400 src="https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds" alt="Portfolio Item 2">
+      <p>Shegels Pummelo Information Systems</p>
+    </div>
+    <div class="portfolio-item">
+      <img width=400 height=400 src="https://qph.cf2.quoracdn.net/main-qimg-501e1f5cbe2ff23a1dcce9bef3413d30-lq" alt="Portfolio Item 3">
+      <p>Simple calculator</p>
+    </div>
+    <!-- Add more portfolio items as needed -->
+  </div>
+</body>
+</html>
