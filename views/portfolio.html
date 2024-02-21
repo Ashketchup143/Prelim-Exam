@@ -58,8 +58,36 @@
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
-    p{
-      margin: none;
+
+    /* Added CSS for styling sections */
+    .section {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .section h2 {
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      margin: 5px 0;
+    }
+    .card {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      margin: 20px;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin: 5px 0;
     }
   </style>
 </head>
@@ -77,32 +105,42 @@
 
   <div class="portfolio-content">
     <h1>Portfolio</h1>
-    <div style="flex: content; flex-direction: row;"><img width=200 height=200 src="https://upload.wikimedia.org/wikipedia/en/6/64/Ateneo_de_Davao_University_logo.png" alt="Portfolio Item 1">
-    <p>Education:
-    Bachelor of Science in Information Systems
-    Ateneo de Davao University</p>
-    <p>Expected Graduation: May 2025</p></div>
+    <section class="section">
+      <div class="card">
+        <h2>Education</h2>
+        <p>Bachelor of Science in Information Systems</p>
+        <p>Ateneo de Davao University</p>
+        <p>Expected Graduation: May 2025</p>
+      </div>
 
-    <p style="margin-top: 20px;">Skills:</p>
+      <div class="card">
+        <h2>Skills</h2>
+        <p>Programming Languages: Proficient in Java, Python, SQL</p>
+        <p>Database Management: Experienced in MySQL, Oracle</p>
+        <p>Web Development: Knowledgeable in HTML, CSS, JavaScript</p>
+        <p>Data Analysis: Skilled in data visualization and interpretation using tools like Tableau</p>
+        <p>Project Management: Effective at coordinating and executing IT projects from inception to completion</p>
+      </div>
+    </section>
+    
 
-      <p>Programming Languages: Proficient in Java, Python, SQL</p>
-      <p>Database Management: Experienced in MySQL, Oracle</p>
-      <p>Web Development: Knowledgeable in HTML, CSS, JavaScript</p>
-      <p>Data Analysis: Skilled in data visualization and interpretation using tools like Tableau</p>
-      <p>Project Management: Effective at coordinating and executing IT projects from inception to completion</p>
-    <div class="portfolio-item">
-      <img width=400 height=400 src="https://play-lh.googleusercontent.com/zPxLgj5nvl20ahJV7aFC6S5mD8kii5CEEDj25j1P9CYAfXL9sdDuO-8eES0r4DhJHrU" alt="Portfolio Item 1">
-      <p>Tic tac toe website</p>
-    </div>
-    <div class="portfolio-item">
-      <img width=400 height=400 src="https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds" alt="Portfolio Item 2">
-      <p>Shegels Pummelo Information Systems</p>
-    </div>
-    <div class="portfolio-item">
-      <img width=400 height=400 src="https://qph.cf2.quoracdn.net/main-qimg-501e1f5cbe2ff23a1dcce9bef3413d30-lq" alt="Portfolio Item 3">
-      <p>Simple calculator</p>
-    </div>
-    <!-- Add more portfolio items as needed -->
+    <!-- Portfolio section -->
+    <h2>Projects</h2>
+    <section class="section">
+      <div class="portfolio-item">
+        <img width=400 height=400 src="https://play-lh.googleusercontent.com/zPxLgj5nvl20ahJV7aFC6S5mD8kii5CEEDj25j1P9CYAfXL9sdDuO-8eES0r4DhJHrU" alt="Portfolio Item 1">
+        <p>Tic tac toe website</p>
+      </div>
+      <div class="portfolio-item">
+        <img width=400 height=400 src="https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds" alt="Portfolio Item 2">
+        <p>Shegels Pummelo Information Systems</p>
+      </div>
+      <div class="portfolio-item">
+        <img width=400 height=400 src="https://qph.cf2.quoracdn.net/main-qimg-501e1f5cbe2ff23a1dcce9bef3413d30-lq" alt="Portfolio Item 3">
+        <p>Simple calculator</p>
+      </div>
+      <!-- Add more portfolio items as needed -->
+    </section>
   </div>
 </body>
 </html>
