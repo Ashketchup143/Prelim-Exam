@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-
+app.set('view engine', 'ejs')
 const port= 3000;
 
 app.use((req, res, next)=>{
@@ -12,19 +12,23 @@ app.use((req, res, next)=>{
 })
 
 app.get('/', function (req, res) {
-  res.sendFile('./views/home.html', { root: __dirname})
+    res.render('home',{heading: "ex battalion music", song: "hatdog"});
+//   res.sendFile('./views/home.html', { root: __dirname})
 })
 
 app.get('/about', function (req, res) {
-    res.sendFile('./views/about.html', { root: __dirname})
+    res.render('about');
+    // res.sendFile('./views/about.html', { root: __dirname})
 })
 
 app.get('/portfolio', function (req, res) {
-    res.sendFile('./views/portfolio.html', { root: __dirname})
+    res.render('portfolio');
+    // res.sendFile('./views/portfolio.html', { root: __dirname})
 })
 
 app.get('/uniquepage', function (req, res) {
-    res.sendFile('./views/uniquepage.html', { root: __dirname})
+    res.render('uniquepage');
+    // res.sendFile('./views/uniquepage.html', { root: __dirname})
 })
 
 app.get('/home',(req,res)=>{

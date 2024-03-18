@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon index.js"
+    "serve": "nodemon newindex.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "animate.css": "^4.1.1",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "nodemon": "^3.0.3"
   }
