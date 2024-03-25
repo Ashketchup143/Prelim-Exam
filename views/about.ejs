@@ -269,6 +269,28 @@
 
     <section class="section">
       <div class="card">
+        <% console.log(studentData)%>
+        <!-- <h2> by: <%= studentData[0].name %></h2> -->
+        <button><a href="/">click me</a></button>
+        <% for (let i =0; i<studentData.length; i++){%>
+          <h1>
+          <%= studentData[i].name %>
+          <%= studentData[i].age %>
+          <%= studentData[i].course %>
+          <%= helloFunction(studentData[i].name)%>
+        </h1>
+        <%}%>
+
+        <% studentData.forEach(function(student){%>
+        <h2>
+          <%= student.name%>
+          <%= student.age%>
+          <%= student.course%>
+        </h2>
+        
+        <% }); %>
+
+
         <p> <%= a %></p>
         <p> <%= b %></p>
         <p> <%= c %></p>
