@@ -3,7 +3,26 @@ const app = express()
 app.set('view engine', 'ejs')
 const port= 3000;
 
+
+// import cryptoRandomString from 'crypto-random-string';
+// let randomString= cryptoRandomString({length: 10});
+// console.log(randomString)
+const weather = require('weather-js');
+
+  app.get('/davao', function (req, res){
+    weather.find({search: 'Davao, Philippines', degreeType: 'C'}, function(err, result) {
+        if(err) console.log(err);
+        else{
+            let data={
+                weatherdavao: eval(JSON.stringify(result,null,2))
+            }
+            res.render('davao',data)
+        }
+      });
+  })
+
 const{ students, hello }= require('./mymodule')
+
 
 console.log(students)
 
@@ -53,7 +72,8 @@ app.get('/aboutus',(req,res)=>{
 })
 
 app.use((req,res)=>{
-    res.status(404).sendFile('./views/error.html', { root: __dirname})
+    // res.status(404).sendFile('./views/error.ejs', { root: __dirname})
+    res.render('error')
 })
 app.listen(port, ()=>{
     console.log(`Server  is running on port ${port}`)
