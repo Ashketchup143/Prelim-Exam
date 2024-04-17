@@ -9,6 +9,17 @@ const port= 3000;
 // console.log(randomString)
 const weather = require('weather-js');
 
+var admin = require("firebase-admin");
+
+var serviceAccount = require("./kayobahala-4e29b-firebase-adminsdk-uebya-d3222053ec.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+const db = admin.firestore()
+const memberColl =  db.collection('people')
+
   app.get('/davao', function (req, res){
     weather.find({search: 'Davao, Philippines', degreeType: 'C'}, function(err, result) {
         if(err) console.log(err);
@@ -36,7 +47,17 @@ app.use((req, res, next)=>{
 
 
 let name="ex battalion music"
-app.get('/', function (req, res) {
+app.get('/', async function (req, res) {
+    const items = await memberColl.get()
+    // console.log(items.docs.length)
+    let data = { 
+        itemdata: items.docs,
+        heading: "members?",
+        song: "rapstar"
+    }
+
+        res.render('index', data);
+    
     res.render('home',{heading: name, song: "hatdog"});
 //   res.sendFile('./views/home.html', { root: __dirname})
 })

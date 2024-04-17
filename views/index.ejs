@@ -68,7 +68,13 @@
     <h1>Into the UNKKKKKOOOOOOOOOOOWWWWWWWWWWWWWWWWWWWWNNNNNNNNNN!!!!!!!!!!!!!!!</h1>
     <a href="/about"><button >about</button></a>
     <a href="/error"><button >error</button></a>
-
+    <h3><%= itemdata%></h3>
+    <% for(let i=0; i<itemdata.length; i++){ %>
+        <h3><%= itemdata[i].data()['member'] %> </h3>
+        <% for(let j = 0; j<itemdata[i].data()['song'].length; j++){ %>
+            <h5><%= itemdata[i].data()['song'][j]%> </h5>
+        <%}%>
+    <%}%>
 </div>
 
 </body>
