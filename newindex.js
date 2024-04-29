@@ -1,11 +1,68 @@
 const express = require('express')
 const app = express()
 app.set('view engine', 'ejs')
-const port= 3000;
+const port= 8000;
+
+
+const cors = require ('cors');
+app.use(cors({
+    origin:true,
+    credentails: true,
+    optionsSuccessstatus:200
+}))
+
+
+
+
+// import cryptoRandomString from 'crypto-random-string';
+// let randomString= cryptoRandomString({length: 10});
+// console.log(randomString)
+const weather = require('weather-js');
+
+
+var admin = require("firebase-admin");
+
+
+var serviceAccount = require("./kayobahala-4e29b-firebase-adminsdk-uebya-d3222053ec.json");
+
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+
+const db = admin.firestore()
+const memberColl =  db.collection('people')
+const studentColl= db.collection('student')
+
+
+app.get('/',async(req,res)=>{
+    const studentsSnapshot=await studentColl.get();
+    const studentsList=studentsSnapshot.docs.map(doc=>doc.data());
+    res.json(studentsList);
+})
+
+
+  app.get('/davao', function (req, res){
+    weather.find({search: 'Davao, Philippines', degreeType: 'C'}, function(err, result) {
+        if(err) console.log(err);
+        else{
+            let data={
+                weatherdavao: eval(JSON.stringify(result,null,2))
+            }
+            res.render('davao',data)
+        }
+      });
+  })
+
 
 const{ students, hello }= require('./mymodule')
 
+
+
+
 console.log(students)
+
 
 app.use((req, res, next)=>{
     console.log('Request Made')
@@ -16,11 +73,25 @@ app.use((req, res, next)=>{
 })
 
 
+
+
 let name="ex battalion music"
-app.get('/', function (req, res) {
+app.get('/', async function (req, res) {
+    const items = await memberColl.get()
+    // console.log(items.docs.length)
+    let data = {
+        itemdata: items.docs,
+        heading: "members?",
+        song: "rapstar"
+    }
+
+
+        res.render('index', data);
+   
     res.render('home',{heading: name, song: "hatdog"});
 //   res.sendFile('./views/home.html', { root: __dirname})
 })
+
 
 let a="Name: Ashley Noel M. Lim"
 let b="Education: Currently pursuing a Bachelor of Science in Information Systems at Ateneo de Davao University"
@@ -34,26 +105,32 @@ app.get('/about', function (req, res) {
     // res.sendFile('./views/about.html', { root: __dirname})
 })
 
+
 app.get('/portfolio', function (req, res) {
     res.render('portfolio');
     // res.sendFile('./views/portfolio.html', { root: __dirname})
 })
+
 
 app.get('/uniquepage', function (req, res) {
     res.render('uniquepage');
     // res.sendFile('./views/uniquepage.html', { root: __dirname})
 })
 
+
 app.get('/home',(req,res)=>{
     res.redirect('/')
 })
+
 
 app.get('/aboutus',(req,res)=>{
     res.redirect('/about')
 })
 
+
 app.use((req,res)=>{
-    res.status(404).sendFile('./views/error.html', { root: __dirname})
+    // res.status(404).sendFile('./views/error.ejs', { root: __dirname})
+    res.render('error')
 })
 app.listen(port, ()=>{
     console.log(`Server  is running on port ${port}`)
